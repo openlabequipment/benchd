@@ -6,9 +6,12 @@
 --A REPL for Lab Automation and Control------
 """
 
+from .magics import Magics
 
 from IPython.terminal.embed import InteractiveShellEmbed
 ipy = InteractiveShellEmbed()
+
+ipy.register_magics(Magics)
 
 def run():
 	ipy.show_banner(__doc__)

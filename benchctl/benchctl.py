@@ -2,7 +2,11 @@ import click
 
 import repl as benchrepl
 
-@click.group()
+
+CONTEXT_SETTINGS = dict(help_option_names=['-h', '--help'])
+
+
+@click.group(context_settings=CONTEXT_SETTINGS)
 @click.option('--debug/--no-debug', default=False)
 def cli(debug):
 	"""Benchctl is a utility for interacting with benchd and benchd-aggregator
